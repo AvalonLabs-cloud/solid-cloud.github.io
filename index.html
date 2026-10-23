@@ -1,8 +1,290 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://avalonlabs-cloud.github.io/solid-cloud.github.io/assets/css/styles.cs">
-</head>
+<style>
+:root {
+  --portfolio-ink: #17221d;
+  --portfolio-muted: #68736d;
+  --portfolio-green: #176b4d;
+  --portfolio-line: #e3e9e5;
+  --portfolio-surface: #f6f8f6;
+}
+
+
+body {
+   color: #111 !important;;
+  /* color: var(--portfolio-ink); */
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.7;
+}
+
+.wrapper {
+  max-width: 1060px;
+}
+
+.site-header {
+  border-top: 3px solid var(--portfolio-green);
+  border-bottom: 1px solid var(--portfolio-line);
+}
+
+.site-title {
+  font-weight: 750;
+  letter-spacing: -0.04em;
+}
+
+a {
+  color: var(--portfolio-green);
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  color: #104b37;
+}
+
+/* Homepage hero */
+.hero {
+  padding: 100px 0 90px;
+  border-bottom: 1px solid var(--portfolio-line);
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: var(--portfolio-green);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin-bottom: 25px;
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
+  font-weight: 780;
+  letter-spacing: -0.075em;
+  line-height: 1.04;
+}
+
+.hero h1 span {
+  color: var(--portfolio-green);
+}
+
+.hero-description {
+  max-width: 650px;
+  color: var(--portfolio-muted);
+  font-size: 1.15rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+  margin-top: 32px;
+}
+
+.button-primary {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid var(--portfolio-green);
+  border-radius: 6px;
+  background: var(--portfolio-green);
+  color: #fff !important;
+  font-size: 0.9rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.button-primary:hover {
+  transform: translateY(-2px);
+  background: #104b37;
+}
+
+.text-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.availability-note {
+  margin-top: 32px;
+  color: var(--portfolio-muted);
+  font-size: 0.85rem;
+}
+
+/* Sections */
+.portfolio-section {
+  padding: 82px 0;
+  border-bottom: 1px solid var(--portfolio-line);
+}
+
+.section-heading {
+  max-width: 670px;
+  margin-bottom: 34px;
+}
+
+.section-heading h2,
+.contact-section h2 {
+  margin-bottom: 14px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  line-height: 1.15;
+}
+
+.section-heading > p:last-child,
+.contact-section > p:not(.eyebrow) {
+  color: var(--portfolio-muted);
+}
+
+/* Featured project */
+.project-card {
+  padding: 32px;
+  border: 1px solid var(--portfolio-line);
+  border-radius: 12px;
+  background: var(--portfolio-surface);
+  transition: border-color 220ms ease, transform 220ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: #a8c8b8;
+}
+
+.project-topline {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--portfolio-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.project-status {
+  color: var(--portfolio-green);
+}
+
+.project-card h3 {
+  margin-top: 32px;
+  font-size: 2.2rem;
+  font-weight: 750;
+  letter-spacing: -0.05em;
+}
+
+.project-description {
+  max-width: 650px;
+  color: var(--portfolio-muted);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0;
+}
+
+.tag-list span {
+  padding: 5px 10px;
+  border: 1px solid var(--portfolio-line);
+  border-radius: 5px;
+  background: #fff;
+  font-size: 0.78rem;
+}
+
+.project-link {
+  display: inline-flex;
+  gap: 10px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Expertise grid */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 36px;
+}
+
+.expertise-item {
+  padding: 25px 0;
+  border-top: 1px solid var(--portfolio-line);
+}
+
+.expertise-index {
+  color: var(--portfolio-green);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.expertise-item h3 {
+  margin-top: 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.expertise-item p {
+  color: var(--portfolio-muted);
+  font-size: 0.93rem;
+}
+
+/* Contact section */
+.contact-section {
+  padding: 85px 0 100px;
+}
+
+.contact-section h2 {
+  max-width: 650px;
+}
+
+/* Scroll reveal: enabled by JavaScript */
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 650ms ease, transform 650ms ease;
+}
+
+.js-ready .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .js-ready .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero {
+    padding: 65px 0;
+  }
+
+  .portfolio-section {
+    padding: 58px 0;
+  }
+
+  .project-card {
+    padding: 22px;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-section {
+    padding: 60px 0 70px;
+  }
+}
+</style>
 <section class="hero">
   <div class="container">
     <p class="eyebrow">Software Engineer · Fintech</p>
