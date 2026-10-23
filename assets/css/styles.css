@@ -11,8 +11,10 @@
   --portfolio-surface: #f6f8f6;
 }
 
+
 body {
-  color: var(--portfolio-ink);
+   color: #111 !important;;
+  /* color: var(--portfolio-ink); */
   background: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.7;
