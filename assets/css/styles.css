@@ -1,8 +1,4 @@
----
----
-@import "{{ site.theme }}";
 
-/* Overall visual system */
 :root {
   --portfolio-ink: #17221d;
   --portfolio-muted: #68736d;
