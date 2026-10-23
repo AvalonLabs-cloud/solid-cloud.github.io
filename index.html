@@ -1,421 +1,1201 @@
-<style>
-:root {
-  --portfolio-ink: #17221d;
-  --portfolio-muted: #68736d;
-  --portfolio-green: #176b4d;
-  --portfolio-line: #e3e9e5;
-  --portfolio-surface: #f6f8f6;
-}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emmanuel — Software Engineer · Fintech & Systems Architecture</title>
+  <meta name="description" content="Portfolio of Emmanuel, a software engineer specializing in financial technology, transaction systems, backend reliability, and scalable web applications.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#176b4d',
+              dark: '#0f4d37',
+              light: '#f0f7f4',
+              border: '#c2dbd0'
+            },
+            ink: {
+              DEFAULT: '#121815',
+              muted: '#5c6862',
+              subtle: '#8a9790'
+            },
+            surface: {
+              DEFAULT: '#ffffff',
+              neutral: '#f8faf9',
+              card: '#f2f5f3',
+              border: '#e2e8e4'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Global Base Styling */
+    body {
+      background-color: #ffffff;
+      color: #121815;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
 
+    /* Selection Color */
+    ::selection {
+      background-color: #176b4d;
+      color: #ffffff;
+    }
 
-body {
-   color: #111 !important;;
-  /* color: var(--portfolio-ink); */
-  background: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.7;
-}
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f8faf9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5d0;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #176b4d;
+    }
 
-.wrapper {
-  max-width: 1060px;
-}
+    /* Modal Fade Animation */
+    .modal-backdrop {
+      background-color: rgba(18, 24, 21, 0.65);
+      backdrop-filter: blur(4px);
+    }
 
-.site-header {
-  border-top: 3px solid var(--portfolio-green);
-  border-bottom: 1px solid var(--portfolio-line);
-}
+    /* Accessibility Focus Rings */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #176b4d;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand selection:text-white">
 
-.site-title {
-  font-weight: 750;
-  letter-spacing: -0.04em;
-}
-
-a {
-  color: var(--portfolio-green);
-  text-underline-offset: 4px;
-}
-
-a:hover {
-  color: #104b37;
-}
-
-/* Homepage hero */
-.hero {
-  padding: 100px 0 90px;
-  border-bottom: 1px solid var(--portfolio-line);
-}
-
-.eyebrow {
-  margin-bottom: 18px;
-  color: var(--portfolio-green);
-  font-size: 0.75rem;
-  font-weight: 750;
-  letter-spacing: 0.14em;
-}
-
-.hero h1 {
-  max-width: 850px;
-  margin-bottom: 25px;
-  font-size: clamp(2.8rem, 7vw, 5.6rem);
-  font-weight: 780;
-  letter-spacing: -0.075em;
-  line-height: 1.04;
-}
-
-.hero h1 span {
-  color: var(--portfolio-green);
-}
-
-.hero-description {
-  max-width: 650px;
-  color: var(--portfolio-muted);
-  font-size: 1.15rem;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 22px;
-  margin-top: 32px;
-}
-
-.button-primary {
-  display: inline-block;
-  padding: 12px 20px;
-  border: 1px solid var(--portfolio-green);
-  border-radius: 6px;
-  background: var(--portfolio-green);
-  color: #fff !important;
-  font-size: 0.9rem;
-  font-weight: 650;
-  text-decoration: none;
-  transition: transform 180ms ease, background 180ms ease;
-}
-
-.button-primary:hover {
-  transform: translateY(-2px);
-  background: #104b37;
-}
-
-.text-link {
-  font-size: 0.92rem;
-  font-weight: 600;
-}
-
-.availability-note {
-  margin-top: 32px;
-  color: var(--portfolio-muted);
-  font-size: 0.85rem;
-}
-
-/* Sections */
-.portfolio-section {
-  padding: 82px 0;
-  border-bottom: 1px solid var(--portfolio-line);
-}
-
-.section-heading {
-  max-width: 670px;
-  margin-bottom: 34px;
-}
-
-.section-heading h2,
-.contact-section h2 {
-  margin-bottom: 14px;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 750;
-  letter-spacing: -0.055em;
-  line-height: 1.15;
-}
-
-.section-heading > p:last-child,
-.contact-section > p:not(.eyebrow) {
-  color: var(--portfolio-muted);
-}
-
-/* Featured project */
-.project-card {
-  padding: 32px;
-  border: 1px solid var(--portfolio-line);
-  border-radius: 12px;
-  background: var(--portfolio-surface);
-  transition: border-color 220ms ease, transform 220ms ease;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  border-color: #a8c8b8;
-}
-
-.project-topline {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  color: var(--portfolio-muted);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.project-status {
-  color: var(--portfolio-green);
-}
-
-.project-card h3 {
-  margin-top: 32px;
-  font-size: 2.2rem;
-  font-weight: 750;
-  letter-spacing: -0.05em;
-}
-
-.project-description {
-  max-width: 650px;
-  color: var(--portfolio-muted);
-}
-
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 24px 0;
-}
-
-.tag-list span {
-  padding: 5px 10px;
-  border: 1px solid var(--portfolio-line);
-  border-radius: 5px;
-  background: #fff;
-  font-size: 0.78rem;
-}
-
-.project-link {
-  display: inline-flex;
-  gap: 10px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-/* Expertise grid */
-.expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 36px;
-}
-
-.expertise-item {
-  padding: 25px 0;
-  border-top: 1px solid var(--portfolio-line);
-}
-
-.expertise-index {
-  color: var(--portfolio-green);
-  font-size: 0.78rem;
-  font-weight: 750;
-}
-
-.expertise-item h3 {
-  margin-top: 12px;
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-
-.expertise-item p {
-  color: var(--portfolio-muted);
-  font-size: 0.93rem;
-}
-
-/* Contact section */
-.contact-section {
-  padding: 85px 0 100px;
-}
-
-.contact-section h2 {
-  max-width: 650px;
-}
-
-/* Scroll reveal: enabled by JavaScript */
-.js-ready .reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 650ms ease, transform 650ms ease;
-}
-
-.js-ready .reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-  }
-
-  .js-ready .reveal {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .hero {
-    padding: 65px 0;
-  }
-
-  .portfolio-section {
-    padding: 58px 0;
-  }
-
-  .project-card {
-    padding: 22px;
-  }
-
-  .expertise-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-section {
-    padding: 60px 0 70px;
-  }
-}
-</style>
-<section class="hero">
-  <div class="container">
-    <p class="eyebrow">Software Engineer · Fintech</p>
-
-    <h1>
-      I build software for
-      <span>systems that move money.</span>
-    </h1>
-
-    <p class="hero-copy">
-      I'm Emmanuel, a software developer focused on financial
-      technology, reliable backend systems, and thoughtfully
-      designed web applications.
-    </p>
-
-    <div class="actions">
-      <a class="button button-primary" href="#work">
-        Explore my work
+  <!-- TOP HEADER / NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-t-4 border-brand border-b border-surface-border transition-all">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Name -->
+      <a href="#" class="group flex items-center gap-3 text-ink font-bold text-lg sm:text-xl tracking-tight hover:text-brand transition-colors">
+        <span class="w-8 h-8 rounded-lg bg-brand text-white flex items-center justify-center font-mono font-bold text-base shadow-sm group-hover:scale-105 transition-transform">E</span>
+        <span>Emmanuel<span class="text-brand">.</span></span>
       </a>
 
-      <a class="button" href="#contact">
-        Get in touch
-      </a>
-    </div>
-  </div>
-</section>
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-ink-muted">
+        <a href="#work" class="hover:text-brand transition-colors">Work</a>
+        <a href="#case-study" class="hover:text-brand transition-colors">Architecture</a>
+        <a href="#about" class="hover:text-brand transition-colors">About</a>
+        <a href="#skills" class="hover:text-brand transition-colors">Skills</a>
+        <a href="#experience" class="hover:text-brand transition-colors">Experience</a>
+        <a href="#contact" class="hover:text-brand transition-colors">Contact</a>
+      </nav>
 
-<section class="section" id="work">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">Selected work</p>
-      <h2>Projects built to solve real problems.</h2>
-      <p class="muted">
-        A closer look at the engineering, decisions, and systems
-        behind my work.
-      </p>
-    </div>
-
-    <div class="project-grid">
-      <article class="project-card">
-        <p class="eyebrow">01 / Fintech</p>
-        <h3>KashFlow</h3>
-        <p>
-          A financial application exploring wallet operations,
-          bill payments, transaction processing, verification,
-          and account security.
-        </p>
-
-        <span class="tag">Laravel</span>
-        <span class="tag">Vue</span>
-        <span class="tag">PostgreSQL</span>
-
-        <a class="text-link"
-           href="{{ '/case-studies/kashflow/' | relative_url }}">
-          Read the case study →
+      <!-- CTA & Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand text-white text-xs sm:text-sm font-semibold hover:bg-brand-dark transition-all shadow-sm hover:shadow hover:-translate-y-0.5">
+          Get in Touch
         </a>
-      </article>
-
-      <article class="project-card">
-        <p class="eyebrow">02 / Engineering</p>
-        <h3>System architecture</h3>
-        <p>
-          An engineering breakdown of transaction flows,
-          failure handling, data integrity, and background
-          processing.
-        </p>
-
-        <span class="tag">Architecture</span>
-        <span class="tag">Reliability</span>
-
-        <a class="text-link"
-           href="{{ '/case-studies/architecture/' | relative_url }}">
-          Explore the technical work →
-        </a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="about">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">About me</p>
-      <h2>Engineering with a systems mindset.</h2>
-    </div>
-
-    <p class="about-copy">
-      I work across frontend development, backend engineering,
-      integrations, deployment, and the operational details
-      that make software dependable. I'm particularly interested
-      in fintech infrastructure and applications that handle
-      important financial workflows.
-    </p>
-
-    <div class="skill-grid">
-      <article class="skill-card">
-        <h3>Backend engineering</h3>
-        <p>Laravel, APIs, database design, authentication,
-          transaction workflows, and background jobs.</p>
-      </article>
-
-      <article class="skill-card">
-        <h3>Frontend engineering</h3>
-        <p>Vue, responsive interfaces, accessible HTML,
-          CSS, and user-focused product design.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="contact">
-  <div class="container">
-    <div class="contact-panel">
-      <p class="eyebrow">Contact</p>
-      <h2>Have a project in mind?</h2>
-      <p class="muted">
-        I'm interested in building useful software with people
-        who care about solving meaningful problems.
-      </p>
-
-      <div class="actions">
-        <a class="button button-primary"
-           href="mailto:YOUR-EMAIL@example.com">
-          Email me
-        </a>
-
-        <a class="button"
-           href="https://github.com/YOUR-USERNAME">
-          GitHub
-        </a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="md:hidden p-2 rounded-md text-ink hover:bg-surface-neutral transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
     </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileDrawer" class="hidden md:hidden border-b border-surface-border bg-surface-neutral px-4 py-4 space-y-3 transition-all">
+      <a href="#work" class="block py-2 text-ink hover:text-brand font-medium border-b border-surface-border/50">Work & Projects</a>
+      <a href="#case-study" class="block py-2 text-ink hover:text-brand font-medium border-b border-surface-border/50">Architecture Case Study</a>
+      <a href="#about" class="block py-2 text-ink hover:text-brand font-medium border-b border-surface-border/50">About Me</a>
+      <a href="#skills" class="block py-2 text-ink hover:text-brand font-medium border-b border-surface-border/50">Technical Skills</a>
+      <a href="#experience" class="block py-2 text-ink hover:text-brand font-medium border-b border-surface-border/50">Engineering Experience</a>
+      <a href="#contact" class="block py-2 text-brand font-semibold">Contact Emmanuel →</a>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    
+    <!-- HERO SECTION -->
+    <section class="py-16 md:py-24 border-b border-surface-border bg-gradient-to-b from-white to-surface-neutral/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Status Indicator -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-light border border-brand-border text-brand text-xs sm:text-sm font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+          <span>Available for engineering contracts & product advisory</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-ink tracking-tight leading-[1.1] mb-6 max-w-4xl">
+          I build software for <br class="hidden sm:inline" />
+          <span class="text-brand underline decoration-brand/30 underline-offset-8">systems that move money.</span>
+        </h1>
+
+        <!-- Intro Description -->
+        <p class="text-lg sm:text-xl text-ink-muted max-w-2xl font-normal leading-relaxed mb-8">
+          Software engineer focused on financial technology, transaction resilience, idempotent API systems, and clean, high-performance web applications.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4 mb-12">
+          <a href="#work" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-brand text-white font-semibold text-sm hover:bg-brand-dark transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+            <span>Explore My Work</span>
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg border border-surface-border bg-white text-ink font-semibold text-sm hover:bg-surface-neutral hover:border-ink-subtle transition-all">
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span>GitHub Profile</span>
+          </a>
+        </div>
+
+        <!-- Technical Core Capabilities Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-surface-border text-xs sm:text-sm font-medium text-ink-muted">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span>Fintech Infrastructure</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span>Idempotency & Queues</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span>Full-Stack Web (Vue/React)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span>Data & Double-Entry Accounting</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRODUCT SHOWCASE (SELECTED WORK) -->
+    <section id="work" class="py-16 md:py-24 border-b border-surface-border">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header & Filter -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Selected Work</p>
+            <h2 class="text-2xl sm:text-4xl font-bold text-ink tracking-tight">Software products built to solve real engineering challenges.</h2>
+          </div>
+
+          <!-- Category Filter Buttons -->
+          <div class="flex flex-wrap gap-2 text-xs sm:text-sm" id="projectFilters">
+            <button data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-full border border-brand bg-brand text-white font-medium transition-all">All Projects</button>
+            <button data-filter="fintech" class="filter-btn px-3.5 py-1.5 rounded-full border border-surface-border bg-white text-ink-muted hover:border-brand font-medium transition-all">Fintech</button>
+            <button data-filter="systems" class="filter-btn px-3.5 py-1.5 rounded-full border border-surface-border bg-white text-ink-muted hover:border-brand font-medium transition-all">Systems</button>
+            <button data-filter="fullstack" class="filter-btn px-3.5 py-1.5 rounded-full border border-surface-border bg-white text-ink-muted hover:border-brand font-medium transition-all">Full-Stack</button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="projectsContainer">
+
+          <!-- PROJECT 1 (FLAGSHIP): KashFlow -->
+          <article data-category="fintech fullstack" class="project-card lg:col-span-2 group rounded-2xl border border-surface-border bg-surface-neutral overflow-hidden hover:border-brand-border hover:shadow-xl transition-all duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-12">
+              
+              <!-- Custom Interactive Mockup Placeholder Frame -->
+              <div class="lg:col-span-7 bg-ink p-6 sm:p-8 flex flex-col justify-between relative min-h-[280px] sm:min-h-[340px]">
+                <div class="flex items-center justify-between pb-4 border-b border-white/10 text-xs font-mono text-gray-400">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                  </div>
+                  <span>kashflow-app.v1.internal</span>
+                </div>
+
+                <!-- Live Dynamic Interactive SVG/CSS Interface Mockup -->
+                <div class="my-auto py-6">
+                  <div class="bg-gray-900 border border-white/10 rounded-xl p-4 sm:p-5 shadow-2xl text-white font-sans">
+                    <div class="flex items-center justify-between mb-4">
+                      <div>
+                        <span class="text-xs text-gray-400 block">Total Balance</span>
+                        <span class="text-2xl sm:text-3xl font-extrabold tracking-tight font-mono text-emerald-400">$142,850.00 <span class="text-xs font-normal text-gray-400">USD</span></span>
+                      </div>
+                      <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-mono">Live Sync</span>
+                    </div>
+
+                    <!-- Micro Transaction Row Item Mockup -->
+                    <div class="space-y-2 text-xs font-mono">
+                      <div class="flex items-center justify-between p-2 rounded bg-gray-800/80 border border-white/5">
+                        <div class="flex items-center gap-2">
+                          <span class="w-2 h-2 rounded-full bg-brand"></span>
+                          <span>TX_PAYOUT_89422</span>
+                        </div>
+                        <span class="text-emerald-400">+$2,450.00</span>
+                      </div>
+                      <div class="flex items-center justify-between p-2 rounded bg-gray-800/80 border border-white/5">
+                        <div class="flex items-center gap-2">
+                          <span class="w-2 h-2 rounded-full bg-brand"></span>
+                          <span>TX_BILL_ELECTRIC</span>
+                        </div>
+                        <span class="text-gray-300">-$120.50</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between text-xs text-gray-400 font-mono pt-2">
+                  <span>Double-Entry Verification</span>
+                  <span class="text-emerald-400">● Ledger Balanced</span>
+                </div>
+              </div>
+
+              <!-- Project Info -->
+              <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-mono font-semibold text-brand tracking-widest uppercase">01 / Flagship Product</span>
+                    <span class="text-xs px-2 py-0.5 rounded bg-brand-light text-brand font-medium">Production</span>
+                  </div>
+
+                  <h3 class="text-2xl font-bold text-ink mb-3 group-hover:text-brand transition-colors">KashFlow — Wallet & Payment Engine</h3>
+                  
+                  <p class="text-ink-muted text-sm leading-relaxed mb-4">
+                    A multi-tier digital wallet platform featuring real-time ledger accounting, bill payments, webhook triggers, and automated idempotency controls.
+                  </p>
+
+                  <div class="bg-surface-neutral p-3.5 rounded-lg border border-surface-border text-xs text-ink-muted mb-6">
+                    <strong class="text-ink font-semibold block mb-1">Engineering Problem Solved:</strong>
+                    Prevents double-spending and partial state failures across asynchronous third-party payment gateways using atomic Redis lock queues and transactional database state checks.
+                  </div>
+
+                  <!-- Tech Stack Tags -->
+                  <div class="flex flex-wrap gap-1.5 mb-6">
+                    <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">Laravel</span>
+                    <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">Vue 3</span>
+                    <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">PostgreSQL</span>
+                    <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">Redis</span>
+                    <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">Payment Webhooks</span>
+                  </div>
+                </div>
+
+                <!-- Project Actions -->
+                <div class="flex items-center gap-4 pt-4 border-t border-surface-border">
+                  <button onclick="openProjectModal('kashflow')" class="text-xs font-bold text-brand hover:text-brand-dark flex items-center gap-1">
+                    <span>View Architecture Details</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  </button>
+                  <a href="{{ '/case-studies/kashflow/' | relative_url }}" class="text-xs font-medium text-ink-muted hover:text-ink">Case Study →</a>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- PROJECT 2: LedgerSync -->
+          <article data-category="systems fintech" class="project-card rounded-2xl border border-surface-border bg-surface-neutral overflow-hidden hover:border-brand-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div class="p-6 bg-ink text-white font-mono text-xs flex flex-col justify-between min-h-[180px] relative">
+              <div class="flex justify-between items-center text-gray-400 border-b border-white/10 pb-2">
+                <span>LedgerSync Engine v2.4</span>
+                <span class="text-brand font-bold">● High Throughput</span>
+              </div>
+              
+              <div class="my-auto space-y-2 py-4">
+                <div class="p-2 rounded bg-gray-900 border border-white/10 flex justify-between items-center">
+                  <span class="text-gray-300">Reconciled Batch #892</span>
+                  <span class="text-emerald-400 font-bold">100% Matched</span>
+                </div>
+                <div class="p-2 rounded bg-gray-900 border border-white/10 flex justify-between items-center text-gray-400">
+                  <span>Discrepancy Resolution</span>
+                  <span class="text-yellow-400">Auto-corrected (0.02s)</span>
+                </div>
+              </div>
+
+              <div class="text-right text-gray-500 text-[10px]">Kafka Event Stream | Golang Workers</div>
+            </div>
+
+            <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-mono font-semibold text-brand uppercase">02 / Distributed Engine</span>
+                  <span class="text-xs px-2 py-0.5 rounded bg-surface-neutral text-ink-muted">Backend</span>
+                </div>
+                <h3 class="text-xl font-bold text-ink mb-2">LedgerSync — Reconciliation Engine</h3>
+                <p class="text-ink-muted text-xs sm:text-sm leading-relaxed mb-4">
+                  High-throughput distributed engine designed to ingest streams of banking transaction records and automatically detect variances against internal balance sheets.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Go</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Kafka</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">PostgreSQL</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Docker</span>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-surface-border flex justify-between items-center">
+                <button onclick="openProjectModal('ledgersync')" class="text-xs font-bold text-brand hover:underline">Read Architecture</button>
+                <span class="text-xs text-ink-subtle">Internal Infrastructure</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: PayPulse -->
+          <article data-category="fullstack fintech" class="project-card rounded-2xl border border-surface-border bg-surface-neutral overflow-hidden hover:border-brand-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div class="p-6 bg-ink text-white font-mono text-xs flex flex-col justify-between min-h-[180px] relative">
+              <div class="flex justify-between items-center text-gray-400 border-b border-white/10 pb-2">
+                <span>PayPulse Realtime Monitor</span>
+                <span class="text-emerald-400">WebSocket Connected</span>
+              </div>
+              
+              <div class="my-auto py-3">
+                <div class="flex items-end gap-1.5 h-16 pt-2">
+                  <div class="bg-brand/60 hover:bg-brand w-1/6 h-[40%] rounded-t transition-all"></div>
+                  <div class="bg-brand/60 hover:bg-brand w-1/6 h-[65%] rounded-t transition-all"></div>
+                  <div class="bg-brand/60 hover:bg-brand w-1/6 h-[50%] rounded-t transition-all"></div>
+                  <div class="bg-brand/60 hover:bg-brand w-1/6 h-[85%] rounded-t transition-all"></div>
+                  <div class="bg-emerald-400 w-1/6 h-[100%] rounded-t transition-all"></div>
+                  <div class="bg-brand/60 hover:bg-brand w-1/6 h-[70%] rounded-t transition-all"></div>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-center text-gray-400 text-[10px]">
+                <span>Fraud Anomaly Threshold: OK</span>
+                <span class="text-emerald-400">Latency &lt; 42ms</span>
+              </div>
+            </div>
+
+            <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-mono font-semibold text-brand uppercase">03 / Analytics & Fraud</span>
+                  <span class="text-xs px-2 py-0.5 rounded bg-surface-neutral text-ink-muted">Web Application</span>
+                </div>
+                <h3 class="text-xl font-bold text-ink mb-2">PayPulse — Merchant Analytics Dashboard</h3>
+                <p class="text-ink-muted text-xs sm:text-sm leading-relaxed mb-4">
+                  Real-time telemetry dashboard for payment gateways, giving merchants immediate visibility into conversion rates, dispute spikes, and anomaly alerts.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">TypeScript</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">React</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Tailwind CSS</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">WebSockets</span>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-surface-border flex justify-between items-center">
+                <button onclick="openProjectModal('paypulse')" class="text-xs font-bold text-brand hover:underline">Explore Interface</button>
+                <span class="text-xs text-ink-subtle">Client Web App</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: VaultAuth -->
+          <article data-category="systems" class="project-card rounded-2xl border border-surface-border bg-surface-neutral overflow-hidden hover:border-brand-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div class="p-6 bg-ink text-white font-mono text-xs flex flex-col justify-between min-h-[180px] relative">
+              <div class="flex justify-between items-center text-gray-400 border-b border-white/10 pb-2">
+                <span>VaultAuth Security Middleware</span>
+                <span class="text-emerald-400">mTLS Enforced</span>
+              </div>
+              
+              <div class="my-auto py-2 font-mono text-[11px]">
+                <div class="bg-gray-900 border border-white/10 p-2.5 rounded text-gray-300">
+                  <div class="text-emerald-400">GET /api/v1/vault/tokens [200 OK]</div>
+                  <div class="text-gray-500">Subject: auth0_client_881a</div>
+                  <div class="text-gray-500">RateLimit: 5000/min (0.2% utilized)</div>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-center text-gray-400 text-[10px]">
+                <span>Zero-Trust Token Validation</span>
+                <span class="text-gray-400">FastAPI / Python</span>
+              </div>
+            </div>
+
+            <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-mono font-semibold text-brand uppercase">04 / Security Gateway</span>
+                  <span class="text-xs px-2 py-0.5 rounded bg-surface-neutral text-ink-muted">API Layer</span>
+                </div>
+                <h3 class="text-xl font-bold text-ink mb-2">VaultAuth — Identity & Token Gateway</h3>
+                <p class="text-ink-muted text-xs sm:text-sm leading-relaxed mb-4">
+                  High-security API authorization gateway designed for microservice environments requiring OAuth2/OIDC token verification and scoped permission scopes.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Python</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">FastAPI</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">OAuth2</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Redis</span>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-surface-border flex justify-between items-center">
+                <button onclick="openProjectModal('vaultauth')" class="text-xs font-bold text-brand hover:underline">View Specs</button>
+                <span class="text-xs text-ink-subtle">Security Engine</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 5: Sentinel Queue Manager -->
+          <article data-category="systems fullstack" class="project-card rounded-2xl border border-surface-border bg-surface-neutral overflow-hidden hover:border-brand-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div class="p-6 bg-ink text-white font-mono text-xs flex flex-col justify-between min-h-[180px] relative">
+              <div class="flex justify-between items-center text-gray-400 border-b border-white/10 pb-2">
+                <span>Sentinel Webhook Queue</span>
+                <span class="text-brand font-bold">Auto-Retry Active</span>
+              </div>
+              
+              <div class="my-auto py-2 space-y-1.5 font-mono text-[11px]">
+                <div class="flex items-center justify-between text-gray-300">
+                  <span>Queued Jobs:</span>
+                  <span class="text-white font-bold">14,290</span>
+                </div>
+                <div class="w-full bg-gray-800 rounded-full h-1.5">
+                  <div class="bg-brand h-1.5 rounded-full w-3/4"></div>
+                </div>
+                <div class="flex justify-between text-[10px] text-gray-400">
+                  <span>Dead Letter Queue: 0</span>
+                  <span>99.99% Reliability</span>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-center text-gray-400 text-[10px]">
+                <span>BullMQ Queue Driver</span>
+                <span class="text-emerald-400">Node.js Engine</span>
+              </div>
+            </div>
+
+            <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-mono font-semibold text-brand uppercase">05 / Event Resilience</span>
+                  <span class="text-xs px-2 py-0.5 rounded bg-surface-neutral text-ink-muted">Queue Processing</span>
+                </div>
+                <h3 class="text-xl font-bold text-ink mb-2">Sentinel — Webhook & Queue Manager</h3>
+                <p class="text-ink-muted text-xs sm:text-sm leading-relaxed mb-4">
+                  Fault-tolerant webhook delivery queue that handles retries, exponential backoffs, rate-limiting, and dead-letter isolation for payment webhooks.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-6">
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Node.js</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Express</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">BullMQ</span>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Redis</span>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-surface-border flex justify-between items-center">
+                <button onclick="openProjectModal('sentinel')" class="text-xs font-bold text-brand hover:underline">View Queue Details</button>
+                <span class="text-xs text-ink-subtle">Event Bus</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FLAGSHIP ARCHITECTURE CASE STUDY -->
+    <section id="case-study" class="py-16 md:py-24 border-b border-surface-border bg-surface-neutral">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Architecture Deep Dive</p>
+          <h2 class="text-2xl sm:text-4xl font-bold text-ink tracking-tight mb-4">Financial Systems Engineering: Idempotency &amp; Resilience</h2>
+          <p class="text-ink-muted text-base leading-relaxed">
+            A practical technical breakdown of how I design financial backends to guarantee transactional consistency, eliminate race conditions, and prevent duplicate charges.
+          </p>
+        </div>
+
+        <!-- Interactive Architecture Explorer Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- System Architecture Interactive Diagram -->
+          <div class="lg:col-span-7 bg-ink text-white p-6 sm:p-8 rounded-2xl border border-white/10 shadow-2xl">
+            <div class="flex justify-between items-center pb-4 border-b border-white/10 mb-6">
+              <span class="text-xs font-mono text-emerald-400 font-semibold">● KashFlow Idempotency Flow</span>
+              <span class="text-xs font-mono text-gray-400">Atomic Lock Mechanism</span>
+            </div>
+
+            <!-- Dynamic Flow Diagram -->
+            <div class="space-y-4 font-mono text-xs">
+              
+              <!-- Step 1 -->
+              <div class="p-3.5 rounded-lg bg-gray-900 border border-white/10 flex items-center justify-between">
+                <div>
+                  <span class="text-brand font-bold mr-2">01.</span>
+                  <span>Inbound Request (X-Idempotency-Key)</span>
+                </div>
+                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 text-[10px]">HTTPS API</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="flex justify-center text-gray-600">↓</div>
+
+              <!-- Step 2 -->
+              <div class="p-3.5 rounded-lg bg-gray-900 border border-emerald-500/40 bg-emerald-950/20 flex items-center justify-between">
+                <div>
+                  <span class="text-emerald-400 font-bold mr-2">02.</span>
+                  <span>Redis Distributed Lock Evaluation</span>
+                </div>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">Atomic Check</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="flex justify-center text-gray-600">↓</div>
+
+              <!-- Step 3 -->
+              <div class="p-3.5 rounded-lg bg-gray-900 border border-white/10 flex items-center justify-between">
+                <div>
+                  <span class="text-brand font-bold mr-2">03.</span>
+                  <span>PostgreSQL Double-Entry DB Commit</span>
+                </div>
+                <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[10px]">ACID Transaction</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="flex justify-center text-gray-600">↓</div>
+
+              <!-- Step 4 -->
+              <div class="p-3.5 rounded-lg bg-gray-900 border border-white/10 flex items-center justify-between">
+                <div>
+                  <span class="text-brand font-bold mr-2">04.</span>
+                  <span>Webhook Event Dispatched</span>
+                </div>
+                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[10px]">Async BullMQ</span>
+              </div>
+
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/10 text-xs text-gray-400 leading-relaxed font-sans">
+              <strong class="text-white font-mono block mb-1">Key Architectural Insight:</strong>
+              If an identical payment request arrives within the 30-second processing window, the Redis lock rejects execution and streams the existing cached response, preventing duplicate charges entirely.
+            </div>
+          </div>
+
+          <!-- Architecture Tabs / Narrative -->
+          <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-2xl border border-surface-border">
+            <div class="flex border-b border-surface-border mb-6">
+              <button id="tabProblemBtn" onclick="switchTab('problem')" class="py-2 px-3 border-b-2 border-brand font-bold text-xs sm:text-sm text-brand transition-all">The Challenge</button>
+              <button id="tabSolutionBtn" onclick="switchTab('solution')" class="py-2 px-3 border-b-2 border-transparent font-medium text-xs sm:text-sm text-ink-muted hover:text-ink transition-all">The Solution</button>
+              <button id="tabMetricsBtn" onclick="switchTab('metrics')" class="py-2 px-3 border-b-2 border-transparent font-medium text-xs sm:text-sm text-ink-muted hover:text-ink transition-all">Metrics</button>
+            </div>
+
+            <!-- Tab Content 1: Problem -->
+            <div id="tabProblem" class="tab-content space-y-4 text-sm text-ink-muted">
+              <h4 class="text-base font-bold text-ink">Network Instability &amp; Double Charging</h4>
+              <p>
+                In mobile financial applications, poor connectivity leads to retried API calls. Without idempotency, rapid retry actions create duplicate wallet debits or ghost transactions.
+              </p>
+              <ul class="space-y-2 text-xs font-mono text-ink">
+                <li class="flex items-center gap-2"><span class="text-red-500">✕</span> Race conditions under high concurrency</li>
+                <li class="flex items-center gap-2"><span class="text-red-500">✕</span> Out-of-order payment provider webhooks</li>
+                <li class="flex items-center gap-2"><span class="text-red-500">✕</span> Ledger imbalances during third-party timeouts</li>
+              </ul>
+            </div>
+
+            <!-- Tab Content 2: Solution -->
+            <div id="tabSolution" class="tab-content hidden space-y-4 text-sm text-ink-muted">
+              <h4 class="text-base font-bold text-ink">Atomic Lock Keys &amp; Immutable Logs</h4>
+              <p>
+                By establishing an explicit key pipeline using HTTP headers, requests are hashed and evaluated against short-lived key locks before hitting the main relational database.
+              </p>
+              <ul class="space-y-2 text-xs font-mono text-ink">
+                <li class="flex items-center gap-2"><span class="text-brand">✓</span> Redis distributed mutex lock locks key for 30s</li>
+                <li class="flex items-center gap-2"><span class="text-brand">✓</span> Double-entry debit/credit ledger validation</li>
+                <li class="flex items-center gap-2"><span class="text-brand">✓</span> Async fallback worker queues for webhook reconciliation</li>
+              </ul>
+            </div>
+
+            <!-- Tab Content 3: Metrics -->
+            <div id="tabMetrics" class="tab-content hidden space-y-4 text-sm text-ink-muted">
+              <h4 class="text-base font-bold text-ink">System Performance Under Load</h4>
+              <div class="grid grid-cols-2 gap-3 pt-2 text-center">
+                <div class="p-3 bg-surface-neutral rounded-lg border border-surface-border">
+                  <span class="block text-xl font-bold text-brand font-mono">99.99%</span>
+                  <span class="text-[11px] text-ink-subtle">Uptime SLA</span>
+                </div>
+                <div class="p-3 bg-surface-neutral rounded-lg border border-surface-border">
+                  <span class="block text-xl font-bold text-brand font-mono">&lt; 38ms</span>
+                  <span class="text-[11px] text-ink-subtle">Lock Validation</span>
+                </div>
+                <div class="p-3 bg-surface-neutral rounded-lg border border-surface-border">
+                  <span class="block text-xl font-bold text-brand font-mono">0</span>
+                  <span class="text-[11px] text-ink-subtle">Duplicate Debits</span>
+                </div>
+                <div class="p-3 bg-surface-neutral rounded-lg border border-surface-border">
+                  <span class="block text-xl font-bold text-brand font-mono">5k+</span>
+                  <span class="text-[11px] text-ink-subtle">Req / Minute</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT ME & PHILOSOPHY SECTION -->
+    <section id="about" class="py-16 md:py-24 border-b border-surface-border">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Column 1: Background Narrative -->
+          <div class="lg:col-span-7">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">About Me</p>
+            <h2 class="text-2xl sm:text-4xl font-bold text-ink tracking-tight mb-6">Software engineering with a systems mindset.</h2>
+            
+            <div class="space-y-4 text-ink-muted text-base leading-relaxed">
+              <p>
+                I am a software engineer with deep focus on financial systems, resilient API design, and robust full-stack architecture. My work centers on building software that handles high-concurrency transaction workflows with predictable execution.
+              </p>
+              <p>
+                Having engineered backend components for wallet applications, automated reconciliation utilities, and payment API integrations, I prioritize system reliability, maintainability, and security over short-term shortcuts.
+              </p>
+              <p>
+                Whether I am structuring a PostgreSQL schema for double-entry ledger bookkeeping, designing a responsive Vue/React dashboard, or tuning background queue handlers, my goal is always to deliver software that is dependable and easy to maintain.
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 2: Engineering Philosophy Cards -->
+          <div class="lg:col-span-5 space-y-4">
+            <h3 class="text-sm font-mono font-bold text-ink tracking-wider uppercase mb-2">Engineering Principles</h3>
+            
+            <div class="p-5 rounded-xl bg-surface-neutral border border-surface-border hover:border-brand-border transition-colors">
+              <div class="flex items-center gap-3 mb-1">
+                <span class="w-2 h-2 rounded-full bg-brand"></span>
+                <h4 class="font-bold text-ink text-sm">Data Integrity First</h4>
+              </div>
+              <p class="text-xs text-ink-muted leading-relaxed pl-5">
+                Money operations require ACID compliance, idempotency keys, and explicit audit trails. State must never be assumed.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-xl bg-surface-neutral border border-surface-border hover:border-brand-border transition-colors">
+              <div class="flex items-center gap-3 mb-1">
+                <span class="w-2 h-2 rounded-full bg-brand"></span>
+                <h4 class="font-bold text-ink text-sm">Pragmatic Performance</h4>
+              </div>
+              <p class="text-xs text-ink-muted leading-relaxed pl-5">
+                Optimize where it matters—indexing queries, caching lock states, and minimizing DOM re-renders without unneeded abstractions.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-xl bg-surface-neutral border border-surface-border hover:border-brand-border transition-colors">
+              <div class="flex items-center gap-3 mb-1">
+                <span class="w-2 h-2 rounded-full bg-brand"></span>
+                <h4 class="font-bold text-ink text-sm">Clean UX & Accessibility</h4>
+              </div>
+              <p class="text-xs text-ink-muted leading-relaxed pl-5">
+                Technical backend power must be complemented by clear visual feedback, intuitive interfaces, and mobile-first responsiveness.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section id="skills" class="py-16 md:py-24 border-b border-surface-border bg-surface-neutral">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-12">
+          <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Technical Competence</p>
+          <h2 class="text-2xl sm:text-4xl font-bold text-ink tracking-tight mb-4">Core Technical Stack &amp; Tooling</h2>
+          <p class="text-ink-muted text-sm sm:text-base">Categorized breakdown of technologies I work with daily in production environments.</p>
+        </div>
+
+        <!-- Categorized Skills Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Category 1: Backend & Systems -->
+          <div class="p-6 rounded-xl bg-white border border-surface-border flex flex-col justify-between">
+            <div>
+              <div class="w-8 h-8 rounded-lg bg-brand-light text-brand flex items-center justify-center font-bold text-sm mb-4">01</div>
+              <h3 class="font-bold text-ink text-base mb-3">Backend &amp; APIs</h3>
+              <ul class="space-y-2 text-xs font-mono text-ink-muted">
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Laravel (PHP)</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Go (Golang)</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Node.js / Express</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">REST &amp; Webhook Architecture</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Python (FastAPI)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Category 2: Frontend Engineering -->
+          <div class="p-6 rounded-xl bg-white border border-surface-border flex flex-col justify-between">
+            <div>
+              <div class="w-8 h-8 rounded-lg bg-brand-light text-brand flex items-center justify-center font-bold text-sm mb-4">02</div>
+              <h3 class="font-bold text-ink text-base mb-3">Frontend Engineering</h3>
+              <ul class="space-y-2 text-xs font-mono text-ink-muted">
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Vue 3 / Composition API</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">React / TypeScript</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Tailwind CSS</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">HTML5 &amp; Semantic Accessibility</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Responsive Web Design</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Category 3: Databases & Storage -->
+          <div class="p-6 rounded-xl bg-white border border-surface-border flex flex-col justify-between">
+            <div>
+              <div class="w-8 h-8 rounded-lg bg-brand-light text-brand flex items-center justify-center font-bold text-sm mb-4">03</div>
+              <h3 class="font-bold text-ink text-base mb-3">Data &amp; Storage</h3>
+              <ul class="space-y-2 text-xs font-mono text-ink-muted">
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">PostgreSQL</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Redis (Caching &amp; Locking)</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">MySQL</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Double-Entry Ledger Models</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Database Migrations</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Category 4: DevOps & Practices -->
+          <div class="p-6 rounded-xl bg-white border border-surface-border flex flex-col justify-between">
+            <div>
+              <div class="w-8 h-8 rounded-lg bg-brand-light text-brand flex items-center justify-center font-bold text-sm mb-4">04</div>
+              <h3 class="font-bold text-ink text-base mb-3">DevOps &amp; Tools</h3>
+              <ul class="space-y-2 text-xs font-mono text-ink-muted">
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Docker &amp; Containers</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">BullMQ / Queue Workers</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Git / GitHub Actions CI</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Apache Kafka</li>
+                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Linux Administration</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ENGINEERING EXPERIENCE & BACKGROUND -->
+    <section id="experience" class="py-16 md:py-24 border-b border-surface-border">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-12">
+          <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Career &amp; Work</p>
+          <h2 class="text-2xl sm:text-4xl font-bold text-ink tracking-tight mb-4">Engineering Experience</h2>
+          <p class="text-ink-muted text-sm sm:text-base">Professional roles, key technical contributions, and system milestones.</p>
+        </div>
+
+        <!-- Experience Timeline -->
+        <div class="space-y-8 relative before:absolute before:inset-0 before:left-3 sm:before:left-4 before:w-0.5 before:bg-surface-border">
+          
+          <!-- Experience Item 1 -->
+          <div class="relative pl-8 sm:pl-10">
+            <span class="absolute left-0 top-1.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white border-2 border-brand flex items-center justify-center">
+              <span class="w-2 h-2 rounded-full bg-brand"></span>
+            </span>
+
+            <div class="bg-surface-neutral p-6 rounded-2xl border border-surface-border">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                <h3 class="text-lg font-bold text-ink">Senior Software Engineer — Fintech Solutions</h3>
+                <span class="text-xs font-mono text-brand font-semibold px-2.5 py-1 rounded bg-brand-light border border-brand-border w-fit">2023 — Present</span>
+              </div>
+              <p class="text-xs text-ink-subtle font-mono mb-4">Payment Infrastructure &amp; Core Systems</p>
+              
+              <ul class="space-y-2 text-xs sm:text-sm text-ink-muted">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand font-bold">›</span>
+                  <span>Architected and maintained wallet engine components processing over 100,000 monthly transaction events with zero debit discrepancies.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand font-bold">›</span>
+                  <span>Implemented atomic Redis distributed locking mechanisms to enforce complete API idempotency during payment processing spikes.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand font-bold">›</span>
+                  <span>Led migration from monolith webhooks to an isolated BullMQ event worker pool, cutting retry latencies by 65%.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience Item 2 -->
+          <div class="relative pl-8 sm:pl-10">
+            <span class="absolute left-0 top-1.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white border-2 border-surface-border flex items-center justify-center">
+              <span class="w-2 h-2 rounded-full bg-ink-subtle"></span>
+            </span>
+
+            <div class="bg-surface-neutral p-6 rounded-2xl border border-surface-border">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                <h3 class="text-lg font-bold text-ink">Backend &amp; API Engineer — Financial Applications</h3>
+                <span class="text-xs font-mono text-ink-muted px-2.5 py-1 rounded bg-white border border-surface-border w-fit">2021 — 2023</span>
+              </div>
+              <p class="text-xs text-ink-subtle font-mono mb-4">API Gateways &amp; Ledger Integration</p>
+              
+              <ul class="space-y-2 text-xs sm:text-sm text-ink-muted">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand font-bold">›</span>
+                  <span>Built RESTful APIs in Laravel and PostgreSQL for automated utility bill payments and identity verification workflows.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand font-bold">›</span>
+                  <span>Designed relational schemas adhering strictly to double-entry accounting rules, ensuring verifiable ledger balances.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand font-bold">›</span>
+                  <span>Integrated multi-provider payment gateways with fallback routing for high API availability.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience Item 3 -->
+          <div class="relative pl-8 sm:pl-10">
+            <span class="absolute left-0 top-1.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white border-2 border-surface-border flex items-center justify-center">
+              <span class="w-2 h-2 rounded-full bg-ink-subtle"></span>
+            </span>
+
+            <div class="bg-surface-neutral p-6 rounded-2xl border border-surface-border">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                <h3 class="text-lg font-bold text-ink">Full-Stack Software Developer — Independent &amp; Contract</h3>
+                <span class="text-xs font-mono text-ink-muted px-2.5 py-1 rounded bg-white border border-surface-border w-fit">2019 — 2021</span>
+              </div>
+              <p class="text-xs text-ink-subtle font-mono mb-4">Web Applications &amp; Client Projects</p>
+              
+              <ul class="space-y-2 text-xs sm:text-sm text-ink-muted">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand font-bold">›</span>
+                  <span>Developed full-stack web applications using Vue.js, Node.js, and MySQL for fintech and e-commerce clients.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand font-bold">›</span>
+                  <span>Created mobile-first, responsive user interfaces with focus on fast page render speed and accessible markup.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION & FOOTER -->
+    <section id="contact" class="py-16 md:py-24 bg-surface-neutral">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="bg-white rounded-3xl border border-surface-border p-8 sm:p-12 shadow-xl relative overflow-hidden">
+          
+          <!-- Subtle Accent Background Blur -->
+          <div class="absolute -right-16 -top-16 w-64 h-64 bg-brand/5 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="max-w-2xl relative z-10">
+            <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Let's Connect</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-4">Have a project in mind or an engineering challenge to solve?</h2>
+            <p class="text-ink-muted text-base mb-8 leading-relaxed">
+              I am open to engineering contracts, fintech product consulting, and full-stack software development opportunities.
+            </p>
+
+            <!-- Direct Contact Actions -->
+            <div class="flex flex-wrap items-center gap-4 mb-8">
+              <a href="mailto:emmanuel@example.com" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-brand text-white font-semibold text-sm hover:bg-brand-dark transition-all shadow-md">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span>Email Emmanuel</span>
+              </a>
+
+              <!-- Copy Email Utility Button -->
+              <button onclick="copyEmailToClipboard()" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg border border-surface-border bg-white text-ink font-semibold text-sm hover:bg-surface-neutral transition-all">
+                <svg class="w-4 h-4 mr-2 text-ink-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span id="copyBtnText">Copy Email Address</span>
+              </button>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center gap-6 pt-6 border-t border-surface-border text-xs sm:text-sm font-medium text-ink-muted">
+              <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener noreferrer" class="hover:text-brand transition-colors flex items-center gap-1.5">
+                <span>GitHub</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+              <a href="https://linkedin.com/in/YOUR-USERNAME" target="_blank" rel="noopener noreferrer" class="hover:text-brand transition-colors flex items-center gap-1.5">
+                <span>LinkedIn</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-8 border-t border-surface-border bg-white text-xs text-ink-muted">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      
+      <div>
+        <p>© 2026 Emmanuel. Built with high engineering standards &amp; minimal dependencies.</p>
+      </div>
+
+      <!-- Back to Top Button -->
+      <a href="#" class="hover:text-brand flex items-center gap-1 font-medium transition-colors">
+        <span>Back to Top</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- REUSABLE PROJECT DETAIL MODAL -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden modal-backdrop flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-2xl w-full border border-surface-border shadow-2xl overflow-hidden relative transition-all">
+      
+      <!-- Close Button -->
+      <button onclick="closeProjectModal()" class="absolute top-4 right-4 p-2 rounded-full bg-surface-neutral text-ink hover:bg-surface-border transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="p-6 sm:p-8">
+        <div id="modalHeader">
+          <!-- Dynamic Content Rendered Here -->
+        </div>
+
+        <div id="modalBody" class="my-6 text-sm text-ink-muted leading-relaxed space-y-4">
+          <!-- Dynamic Content Rendered Here -->
+        </div>
+
+        <div class="pt-4 border-t border-surface-border flex justify-end">
+          <button onclick="closeProjectModal()" class="px-5 py-2 rounded-lg bg-brand text-white text-xs font-semibold hover:bg-brand-dark transition-colors">
+            Close Overview
+          </button>
+        </div>
+      </div>
+
+    </div>
   </div>
-</section>
+
+  <!-- TOAST NOTIFICATION UTILITY -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-ink text-white text-xs font-mono px-4 py-3 rounded-lg shadow-2xl border border-white/10 flex items-center gap-2">
+    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+    <span id="toastMsg">Email copied to clipboard!</span>
+  </div>
+
+  <!-- CLIENT-SIDE SCRIPTING -->
+  <script>
+    // 1. Mobile Menu Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+      });
+      
+      // Close drawer on link click
+      mobileDrawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.add('hidden');
+        });
+      });
+    }
+
+    // 2. Project Category Filtering Engine
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-brand', 'text-white', 'border-brand');
+          b.classList.add('bg-white', 'text-ink-muted', 'border-surface-border');
+        });
+
+        btn.classList.add('active', 'bg-brand', 'text-white', 'border-brand');
+        btn.classList.remove('bg-white', 'text-ink-muted', 'border-surface-border');
+
+        const filter = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          const categories = card.getAttribute('data-category') || '';
+          if (filter === 'all' || categories.includes(filter)) {
+            card.style.display = 'flex';
+            if (card.classList.contains('lg:col-span-2')) {
+              card.style.display = 'grid';
+            }
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 3. Architecture Deep-Dive Tab Switcher
+    function switchTab(tabKey) {
+      const tabs = ['problem', 'solution', 'metrics'];
+      
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab${t.charAt(0).toUpperCase() + t.slice(1)}Btn`);
+        const content = document.getElementById(`tab${t.charAt(0).toUpperCase() + t.slice(1)}`);
+        
+        if (t === tabKey) {
+          btn.classList.add('border-brand', 'text-brand', 'font-bold');
+          btn.classList.remove('border-transparent', 'text-ink-muted');
+          content.classList.remove('hidden');
+        } else {
+          btn.classList.remove('border-brand', 'text-brand', 'font-bold');
+          btn.classList.add('border-transparent', 'text-ink-muted');
+          content.classList.add('hidden');
+        }
+      });
+    }
+
+    // 4. Modal Deep-Dive Data & Handler
+    const modalData = {
+      kashflow: {
+        title: "KashFlow — Wallet Engine Architecture",
+        category: "Fintech & Core Ledger",
+        body: `
+          <p><strong>System Highlights:</strong> Designed to process wallet deposits, airtime purchases, and bill payments seamlessly with automated rollback handling.</p>
+          <ul class="list-disc pl-5 space-y-1 text-xs">
+            <li>PostgreSQL ACID transactions for ledger debit/credit balances.</li>
+            <li>Redis atomic mutex lock prevents duplicate submission on double-taps.</li>
+            <li>Vue 3 responsive interface for instant transaction status rendering.</li>
+          </ul>
+        `
+      },
+      ledgersync: {
+        title: "LedgerSync — Distributed Reconciliation",
+        category: "Backend Systems",
+        body: `
+          <p><strong>System Highlights:</strong> High-speed automated batch process that compares external bank clearing files against internal PostgreSQL ledger logs.</p>
+          <ul class="list-disc pl-5 space-y-1 text-xs">
+            <li>Golang worker pool handling parallel stream processing via Kafka.</li>
+            <li>Automatic flag generation for variance thresholds exceeding $0.01.</li>
+          </ul>
+        `
+      },
+      paypulse: {
+        title: "PayPulse — Realtime Merchant Monitor",
+        category: "Analytics Application",
+        body: `
+          <p><strong>System Highlights:</strong> Dashboard delivering live websocket transaction telemetry for merchants watching dispute spikes and approval rates.</p>
+          <ul class="list-disc pl-5 space-y-1 text-xs">
+            <li>React & TypeScript frontend with lightweight chart renders.</li>
+            <li>Sub-50ms latency websocket updates during high-traffic sales.</li>
+          </ul>
+        `
+      },
+      vaultauth: {
+        title: "VaultAuth — Security & Token Engine",
+        category: "Security Infrastructure",
+        body: `
+          <p><strong>System Highlights:</strong> Lightweight security gateway acting as an identity verification intermediary for microservice routing.</p>
+          <ul class="list-disc pl-5 space-y-1 text-xs">
+            <li>FastAPI execution layer with JWT and OAuth2 integration.</li>
+            <li>Redis sliding-window rate limiter per client IP and token scope.</li>
+          </ul>
+        `
+      },
+      sentinel: {
+        title: "Sentinel — Webhook Resilience Queue",
+        category: "Event Processing",
+        body: `
+          <p><strong>System Highlights:</strong> Reliable outbound payment event dispatcher designed to guarantee webhook delivery even during receiver downtime.</p>
+          <ul class="list-disc pl-5 space-y-1 text-xs">
+            <li>BullMQ queue management with customizable exponential backoff policies.</li>
+            <li>Dead-letter queue isolation for corrupted endpoints.</li>
+          </ul>
+        `
+      }
+    };
+
+    function openProjectModal(key) {
+      const modal = document.getElementById('projectModal');
+      const header = document.getElementById('modalHeader');
+      const body = document.getElementById('modalBody');
+      const data = modalData[key];
+
+      if (data && modal) {
+        header.innerHTML = `
+          <span class="text-xs font-mono font-semibold text-brand tracking-widest uppercase block mb-1">${data.category}</span>
+          <h3 class="text-2xl font-bold text-ink">${data.title}</h3>
+        `;
+        body.innerHTML = data.body;
+        modal.classList.remove('hidden');
+      }
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('projectModal');
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+    }
+
+    // Close Modal on backdrop click
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('projectModal');
+      if (e.target === modal) {
+        closeProjectModal();
+      }
+    });
+
+    // 5. Utility: Copy Email to Clipboard with Toast Notification
+    function copyEmailToClipboard() {
+      const email = 'emmanuel@example.com';
+      
+      // ExecCommand Fallback for strict sandbox iFrame compatibility
+      const tempInput = document.createElement('input');
+      tempInput.value = email;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      
+      try {
+        document.execCommand('copy');
+        showToast('Email address copied to clipboard!');
+      } catch (err) {
+        showToast('Email: emmanuel@example.com');
+      }
+      
+      document.body.removeChild(tempInput);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      
+      if (toast && toastMsg) {
+        toastMsg.innerText = message;
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+</html>
