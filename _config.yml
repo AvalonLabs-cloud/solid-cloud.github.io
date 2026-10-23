@@ -3,3 +3,5 @@ description: Fintech, payment systems, and fullstack engineering
 url: "https://solid-cloud.github.io"
 baseurl: ""
 theme: minima
+sass:
+sass_dir: assets/css/style.scss
