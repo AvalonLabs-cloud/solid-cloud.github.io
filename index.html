@@ -104,7 +104,6 @@
       <!-- Desktop Navigation Links -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-ink-muted">
         <a href="#work" class="hover:text-brand transition-colors">Work</a>
-        <a href="#case-study" class="hover:text-brand transition-colors">Architecture</a>
         <a href="#about" class="hover:text-brand transition-colors">About</a>
         <a href="#skills" class="hover:text-brand transition-colors">Skills</a>
         <a href="#experience" class="hover:text-brand transition-colors">Experience</a>
@@ -129,7 +128,6 @@
     <!-- Mobile Drawer Navigation -->
     <div id="mobileDrawer" class="hidden md:hidden border-b border-surface-border bg-surface-neutral px-4 py-4 space-y-3 transition-all">
       <a href="#work" class="block py-2 text-ink hover:text-brand font-medium border-b border-surface-border/50">Work & Projects</a>
-      <a href="#case-study" class="block py-2 text-ink hover:text-brand font-medium border-b border-surface-border/50">Architecture Case Study</a>
       <a href="#about" class="block py-2 text-ink hover:text-brand font-medium border-b border-surface-border/50">About Me</a>
       <a href="#skills" class="block py-2 text-ink hover:text-brand font-medium border-b border-surface-border/50">Technical Skills</a>
       <a href="#experience" class="block py-2 text-ink hover:text-brand font-medium border-b border-surface-border/50">Engineering Experience</a>
@@ -163,7 +161,7 @@
         <!-- CTA Action Buttons -->
         <div class="flex flex-wrap items-center gap-4 mb-12">
           <a href="#work" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-brand text-white font-semibold text-sm hover:bg-brand-dark transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
-            <span>Explore My Work</span>
+            <span> My Work</span>
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </a>
           <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg border border-surface-border bg-white text-ink font-semibold text-sm hover:bg-surface-neutral hover:border-ink-subtle transition-all">
@@ -233,36 +231,7 @@
                   <span>kashflow-app.v1.internal</span>
                 </div>
 
-                <!-- Live Dynamic Interactive SVG/CSS Interface Mockup -->
-                <div class="my-auto py-6">
-                  <div class="bg-gray-900 border border-white/10 rounded-xl p-4 sm:p-5 shadow-2xl text-white font-sans">
-                    <div class="flex items-center justify-between mb-4">
-                      <div>
-                        <span class="text-xs text-gray-400 block">Total Balance</span>
-                        <span class="text-2xl sm:text-3xl font-extrabold tracking-tight font-mono text-emerald-400">$142,850.00 <span class="text-xs font-normal text-gray-400">USD</span></span>
-                      </div>
-                      <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-mono">Live Sync</span>
-                    </div>
 
-                    <!-- Micro Transaction Row Item Mockup -->
-                    <div class="space-y-2 text-xs font-mono">
-                      <div class="flex items-center justify-between p-2 rounded bg-gray-800/80 border border-white/5">
-                        <div class="flex items-center gap-2">
-                          <span class="w-2 h-2 rounded-full bg-brand"></span>
-                          <span>TX_PAYOUT_89422</span>
-                        </div>
-                        <span class="text-emerald-400">+$2,450.00</span>
-                      </div>
-                      <div class="flex items-center justify-between p-2 rounded bg-gray-800/80 border border-white/5">
-                        <div class="flex items-center gap-2">
-                          <span class="w-2 h-2 rounded-full bg-brand"></span>
-                          <span>TX_BILL_ELECTRIC</span>
-                        </div>
-                        <span class="text-gray-300">-$120.50</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
                 <div class="flex items-center justify-between text-xs text-gray-400 font-mono pt-2">
                   <span>Double-Entry Verification</span>
@@ -284,17 +253,16 @@
                     A multi-tier digital wallet platform featuring real-time ledger accounting, bill payments, webhook triggers, and automated idempotency controls.
                   </p>
 
-                  <div class="bg-surface-neutral p-3.5 rounded-lg border border-surface-border text-xs text-ink-muted mb-6">
-                    <strong class="text-ink font-semibold block mb-1">Engineering Problem Solved:</strong>
-                    Prevents double-spending and partial state failures across asynchronous third-party payment gateways using atomic Redis lock queues and transactional database state checks.
-                  </div>
-
                   <!-- Tech Stack Tags -->
                   <div class="flex flex-wrap gap-1.5 mb-6">
                     <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">Laravel</span>
                     <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">Vue 3</span>
                     <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">PostgreSQL</span>
-                    <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">Redis</span>
+                    <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">php</span>
+                                        <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">flutterwave</span>
+                                        <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">js</span>
+                                        <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">php filament</span>
+                                        <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">inertia js</span>
                     <span class="px-2.5 py-1 rounded text-xs font-mono bg-surface-neutral border border-surface-border text-ink">Payment Webhooks</span>
                   </div>
                 </div>
@@ -308,353 +276,13 @@
                   <a href="{{ '/case-studies/kashflow/' | relative_url }}" class="text-xs font-medium text-ink-muted hover:text-ink">Case Study →</a>
                 </div>
               </div>
-
             </div>
           </article>
-
-          <!-- PROJECT 2: LedgerSync -->
-          <article data-category="systems fintech" class="project-card rounded-2xl border border-surface-border bg-surface-neutral overflow-hidden hover:border-brand-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
-            <div class="p-6 bg-ink text-white font-mono text-xs flex flex-col justify-between min-h-[180px] relative">
-              <div class="flex justify-between items-center text-gray-400 border-b border-white/10 pb-2">
-                <span>LedgerSync Engine v2.4</span>
-                <span class="text-brand font-bold">● High Throughput</span>
-              </div>
-              
-              <div class="my-auto space-y-2 py-4">
-                <div class="p-2 rounded bg-gray-900 border border-white/10 flex justify-between items-center">
-                  <span class="text-gray-300">Reconciled Batch #892</span>
-                  <span class="text-emerald-400 font-bold">100% Matched</span>
-                </div>
-                <div class="p-2 rounded bg-gray-900 border border-white/10 flex justify-between items-center text-gray-400">
-                  <span>Discrepancy Resolution</span>
-                  <span class="text-yellow-400">Auto-corrected (0.02s)</span>
-                </div>
-              </div>
-
-              <div class="text-right text-gray-500 text-[10px]">Kafka Event Stream | Golang Workers</div>
-            </div>
-
-            <div class="p-6 bg-white flex-grow flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-xs font-mono font-semibold text-brand uppercase">02 / Distributed Engine</span>
-                  <span class="text-xs px-2 py-0.5 rounded bg-surface-neutral text-ink-muted">Backend</span>
-                </div>
-                <h3 class="text-xl font-bold text-ink mb-2">LedgerSync — Reconciliation Engine</h3>
-                <p class="text-ink-muted text-xs sm:text-sm leading-relaxed mb-4">
-                  High-throughput distributed engine designed to ingest streams of banking transaction records and automatically detect variances against internal balance sheets.
-                </p>
-                <div class="flex flex-wrap gap-1.5 mb-6">
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Go</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Kafka</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">PostgreSQL</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Docker</span>
-                </div>
-              </div>
-
-              <div class="pt-3 border-t border-surface-border flex justify-between items-center">
-                <button onclick="openProjectModal('ledgersync')" class="text-xs font-bold text-brand hover:underline">Read Architecture</button>
-                <span class="text-xs text-ink-subtle">Internal Infrastructure</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 3: PayPulse -->
-          <article data-category="fullstack fintech" class="project-card rounded-2xl border border-surface-border bg-surface-neutral overflow-hidden hover:border-brand-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
-            <div class="p-6 bg-ink text-white font-mono text-xs flex flex-col justify-between min-h-[180px] relative">
-              <div class="flex justify-between items-center text-gray-400 border-b border-white/10 pb-2">
-                <span>PayPulse Realtime Monitor</span>
-                <span class="text-emerald-400">WebSocket Connected</span>
-              </div>
-              
-              <div class="my-auto py-3">
-                <div class="flex items-end gap-1.5 h-16 pt-2">
-                  <div class="bg-brand/60 hover:bg-brand w-1/6 h-[40%] rounded-t transition-all"></div>
-                  <div class="bg-brand/60 hover:bg-brand w-1/6 h-[65%] rounded-t transition-all"></div>
-                  <div class="bg-brand/60 hover:bg-brand w-1/6 h-[50%] rounded-t transition-all"></div>
-                  <div class="bg-brand/60 hover:bg-brand w-1/6 h-[85%] rounded-t transition-all"></div>
-                  <div class="bg-emerald-400 w-1/6 h-[100%] rounded-t transition-all"></div>
-                  <div class="bg-brand/60 hover:bg-brand w-1/6 h-[70%] rounded-t transition-all"></div>
-                </div>
-              </div>
-
-              <div class="flex justify-between items-center text-gray-400 text-[10px]">
-                <span>Fraud Anomaly Threshold: OK</span>
-                <span class="text-emerald-400">Latency &lt; 42ms</span>
-              </div>
-            </div>
-
-            <div class="p-6 bg-white flex-grow flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-xs font-mono font-semibold text-brand uppercase">03 / Analytics & Fraud</span>
-                  <span class="text-xs px-2 py-0.5 rounded bg-surface-neutral text-ink-muted">Web Application</span>
-                </div>
-                <h3 class="text-xl font-bold text-ink mb-2">PayPulse — Merchant Analytics Dashboard</h3>
-                <p class="text-ink-muted text-xs sm:text-sm leading-relaxed mb-4">
-                  Real-time telemetry dashboard for payment gateways, giving merchants immediate visibility into conversion rates, dispute spikes, and anomaly alerts.
-                </p>
-                <div class="flex flex-wrap gap-1.5 mb-6">
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">TypeScript</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">React</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Tailwind CSS</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">WebSockets</span>
-                </div>
-              </div>
-
-              <div class="pt-3 border-t border-surface-border flex justify-between items-center">
-                <button onclick="openProjectModal('paypulse')" class="text-xs font-bold text-brand hover:underline">Explore Interface</button>
-                <span class="text-xs text-ink-subtle">Client Web App</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 4: VaultAuth -->
-          <article data-category="systems" class="project-card rounded-2xl border border-surface-border bg-surface-neutral overflow-hidden hover:border-brand-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
-            <div class="p-6 bg-ink text-white font-mono text-xs flex flex-col justify-between min-h-[180px] relative">
-              <div class="flex justify-between items-center text-gray-400 border-b border-white/10 pb-2">
-                <span>VaultAuth Security Middleware</span>
-                <span class="text-emerald-400">mTLS Enforced</span>
-              </div>
-              
-              <div class="my-auto py-2 font-mono text-[11px]">
-                <div class="bg-gray-900 border border-white/10 p-2.5 rounded text-gray-300">
-                  <div class="text-emerald-400">GET /api/v1/vault/tokens [200 OK]</div>
-                  <div class="text-gray-500">Subject: auth0_client_881a</div>
-                  <div class="text-gray-500">RateLimit: 5000/min (0.2% utilized)</div>
-                </div>
-              </div>
-
-              <div class="flex justify-between items-center text-gray-400 text-[10px]">
-                <span>Zero-Trust Token Validation</span>
-                <span class="text-gray-400">FastAPI / Python</span>
-              </div>
-            </div>
-
-            <div class="p-6 bg-white flex-grow flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-xs font-mono font-semibold text-brand uppercase">04 / Security Gateway</span>
-                  <span class="text-xs px-2 py-0.5 rounded bg-surface-neutral text-ink-muted">API Layer</span>
-                </div>
-                <h3 class="text-xl font-bold text-ink mb-2">VaultAuth — Identity & Token Gateway</h3>
-                <p class="text-ink-muted text-xs sm:text-sm leading-relaxed mb-4">
-                  High-security API authorization gateway designed for microservice environments requiring OAuth2/OIDC token verification and scoped permission scopes.
-                </p>
-                <div class="flex flex-wrap gap-1.5 mb-6">
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Python</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">FastAPI</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">OAuth2</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Redis</span>
-                </div>
-              </div>
-
-              <div class="pt-3 border-t border-surface-border flex justify-between items-center">
-                <button onclick="openProjectModal('vaultauth')" class="text-xs font-bold text-brand hover:underline">View Specs</button>
-                <span class="text-xs text-ink-subtle">Security Engine</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 5: Sentinel Queue Manager -->
-          <article data-category="systems fullstack" class="project-card rounded-2xl border border-surface-border bg-surface-neutral overflow-hidden hover:border-brand-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
-            <div class="p-6 bg-ink text-white font-mono text-xs flex flex-col justify-between min-h-[180px] relative">
-              <div class="flex justify-between items-center text-gray-400 border-b border-white/10 pb-2">
-                <span>Sentinel Webhook Queue</span>
-                <span class="text-brand font-bold">Auto-Retry Active</span>
-              </div>
-              
-              <div class="my-auto py-2 space-y-1.5 font-mono text-[11px]">
-                <div class="flex items-center justify-between text-gray-300">
-                  <span>Queued Jobs:</span>
-                  <span class="text-white font-bold">14,290</span>
-                </div>
-                <div class="w-full bg-gray-800 rounded-full h-1.5">
-                  <div class="bg-brand h-1.5 rounded-full w-3/4"></div>
-                </div>
-                <div class="flex justify-between text-[10px] text-gray-400">
-                  <span>Dead Letter Queue: 0</span>
-                  <span>99.99% Reliability</span>
-                </div>
-              </div>
-
-              <div class="flex justify-between items-center text-gray-400 text-[10px]">
-                <span>BullMQ Queue Driver</span>
-                <span class="text-emerald-400">Node.js Engine</span>
-              </div>
-            </div>
-
-            <div class="p-6 bg-white flex-grow flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-xs font-mono font-semibold text-brand uppercase">05 / Event Resilience</span>
-                  <span class="text-xs px-2 py-0.5 rounded bg-surface-neutral text-ink-muted">Queue Processing</span>
-                </div>
-                <h3 class="text-xl font-bold text-ink mb-2">Sentinel — Webhook & Queue Manager</h3>
-                <p class="text-ink-muted text-xs sm:text-sm leading-relaxed mb-4">
-                  Fault-tolerant webhook delivery queue that handles retries, exponential backoffs, rate-limiting, and dead-letter isolation for payment webhooks.
-                </p>
-                <div class="flex flex-wrap gap-1.5 mb-6">
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Node.js</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Express</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">BullMQ</span>
-                  <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-surface-neutral text-ink border border-surface-border">Redis</span>
-                </div>
-              </div>
-
-              <div class="pt-3 border-t border-surface-border flex justify-between items-center">
-                <button onclick="openProjectModal('sentinel')" class="text-xs font-bold text-brand hover:underline">View Queue Details</button>
-                <span class="text-xs text-ink-subtle">Event Bus</span>
-              </div>
-            </div>
-          </article>
-
         </div>
-
       </div>
     </section>
 
-    <!-- FLAGSHIP ARCHITECTURE CASE STUDY -->
-    <section id="case-study" class="py-16 md:py-24 border-b border-surface-border bg-surface-neutral">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="max-w-3xl mb-12">
-          <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Architecture Deep Dive</p>
-          <h2 class="text-2xl sm:text-4xl font-bold text-ink tracking-tight mb-4">Financial Systems Engineering: Idempotency &amp; Resilience</h2>
-          <p class="text-ink-muted text-base leading-relaxed">
-            A practical technical breakdown of how I design financial backends to guarantee transactional consistency, eliminate race conditions, and prevent duplicate charges.
-          </p>
-        </div>
-
-        <!-- Interactive Architecture Explorer Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          <!-- System Architecture Interactive Diagram -->
-          <div class="lg:col-span-7 bg-ink text-white p-6 sm:p-8 rounded-2xl border border-white/10 shadow-2xl">
-            <div class="flex justify-between items-center pb-4 border-b border-white/10 mb-6">
-              <span class="text-xs font-mono text-emerald-400 font-semibold">● KashFlow Idempotency Flow</span>
-              <span class="text-xs font-mono text-gray-400">Atomic Lock Mechanism</span>
-            </div>
-
-            <!-- Dynamic Flow Diagram -->
-            <div class="space-y-4 font-mono text-xs">
-              
-              <!-- Step 1 -->
-              <div class="p-3.5 rounded-lg bg-gray-900 border border-white/10 flex items-center justify-between">
-                <div>
-                  <span class="text-brand font-bold mr-2">01.</span>
-                  <span>Inbound Request (X-Idempotency-Key)</span>
-                </div>
-                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 text-[10px]">HTTPS API</span>
-              </div>
-
-              <!-- Arrow -->
-              <div class="flex justify-center text-gray-600">↓</div>
-
-              <!-- Step 2 -->
-              <div class="p-3.5 rounded-lg bg-gray-900 border border-emerald-500/40 bg-emerald-950/20 flex items-center justify-between">
-                <div>
-                  <span class="text-emerald-400 font-bold mr-2">02.</span>
-                  <span>Redis Distributed Lock Evaluation</span>
-                </div>
-                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">Atomic Check</span>
-              </div>
-
-              <!-- Arrow -->
-              <div class="flex justify-center text-gray-600">↓</div>
-
-              <!-- Step 3 -->
-              <div class="p-3.5 rounded-lg bg-gray-900 border border-white/10 flex items-center justify-between">
-                <div>
-                  <span class="text-brand font-bold mr-2">03.</span>
-                  <span>PostgreSQL Double-Entry DB Commit</span>
-                </div>
-                <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[10px]">ACID Transaction</span>
-              </div>
-
-              <!-- Arrow -->
-              <div class="flex justify-center text-gray-600">↓</div>
-
-              <!-- Step 4 -->
-              <div class="p-3.5 rounded-lg bg-gray-900 border border-white/10 flex items-center justify-between">
-                <div>
-                  <span class="text-brand font-bold mr-2">04.</span>
-                  <span>Webhook Event Dispatched</span>
-                </div>
-                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[10px]">Async BullMQ</span>
-              </div>
-
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-white/10 text-xs text-gray-400 leading-relaxed font-sans">
-              <strong class="text-white font-mono block mb-1">Key Architectural Insight:</strong>
-              If an identical payment request arrives within the 30-second processing window, the Redis lock rejects execution and streams the existing cached response, preventing duplicate charges entirely.
-            </div>
-          </div>
-
-          <!-- Architecture Tabs / Narrative -->
-          <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-2xl border border-surface-border">
-            <div class="flex border-b border-surface-border mb-6">
-              <button id="tabProblemBtn" onclick="switchTab('problem')" class="py-2 px-3 border-b-2 border-brand font-bold text-xs sm:text-sm text-brand transition-all">The Challenge</button>
-              <button id="tabSolutionBtn" onclick="switchTab('solution')" class="py-2 px-3 border-b-2 border-transparent font-medium text-xs sm:text-sm text-ink-muted hover:text-ink transition-all">The Solution</button>
-              <button id="tabMetricsBtn" onclick="switchTab('metrics')" class="py-2 px-3 border-b-2 border-transparent font-medium text-xs sm:text-sm text-ink-muted hover:text-ink transition-all">Metrics</button>
-            </div>
-
-            <!-- Tab Content 1: Problem -->
-            <div id="tabProblem" class="tab-content space-y-4 text-sm text-ink-muted">
-              <h4 class="text-base font-bold text-ink">Network Instability &amp; Double Charging</h4>
-              <p>
-                In mobile financial applications, poor connectivity leads to retried API calls. Without idempotency, rapid retry actions create duplicate wallet debits or ghost transactions.
-              </p>
-              <ul class="space-y-2 text-xs font-mono text-ink">
-                <li class="flex items-center gap-2"><span class="text-red-500">✕</span> Race conditions under high concurrency</li>
-                <li class="flex items-center gap-2"><span class="text-red-500">✕</span> Out-of-order payment provider webhooks</li>
-                <li class="flex items-center gap-2"><span class="text-red-500">✕</span> Ledger imbalances during third-party timeouts</li>
-              </ul>
-            </div>
-
-            <!-- Tab Content 2: Solution -->
-            <div id="tabSolution" class="tab-content hidden space-y-4 text-sm text-ink-muted">
-              <h4 class="text-base font-bold text-ink">Atomic Lock Keys &amp; Immutable Logs</h4>
-              <p>
-                By establishing an explicit key pipeline using HTTP headers, requests are hashed and evaluated against short-lived key locks before hitting the main relational database.
-              </p>
-              <ul class="space-y-2 text-xs font-mono text-ink">
-                <li class="flex items-center gap-2"><span class="text-brand">✓</span> Redis distributed mutex lock locks key for 30s</li>
-                <li class="flex items-center gap-2"><span class="text-brand">✓</span> Double-entry debit/credit ledger validation</li>
-                <li class="flex items-center gap-2"><span class="text-brand">✓</span> Async fallback worker queues for webhook reconciliation</li>
-              </ul>
-            </div>
-
-            <!-- Tab Content 3: Metrics -->
-            <div id="tabMetrics" class="tab-content hidden space-y-4 text-sm text-ink-muted">
-              <h4 class="text-base font-bold text-ink">System Performance Under Load</h4>
-              <div class="grid grid-cols-2 gap-3 pt-2 text-center">
-                <div class="p-3 bg-surface-neutral rounded-lg border border-surface-border">
-                  <span class="block text-xl font-bold text-brand font-mono">99.99%</span>
-                  <span class="text-[11px] text-ink-subtle">Uptime SLA</span>
-                </div>
-                <div class="p-3 bg-surface-neutral rounded-lg border border-surface-border">
-                  <span class="block text-xl font-bold text-brand font-mono">&lt; 38ms</span>
-                  <span class="text-[11px] text-ink-subtle">Lock Validation</span>
-                </div>
-                <div class="p-3 bg-surface-neutral rounded-lg border border-surface-border">
-                  <span class="block text-xl font-bold text-brand font-mono">0</span>
-                  <span class="text-[11px] text-ink-subtle">Duplicate Debits</span>
-                </div>
-                <div class="p-3 bg-surface-neutral rounded-lg border border-surface-border">
-                  <span class="block text-xl font-bold text-brand font-mono">5k+</span>
-                  <span class="text-[11px] text-ink-subtle">Req / Minute</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
+  
 
     <!-- ABOUT ME & PHILOSOPHY SECTION -->
     <section id="about" class="py-16 md:py-24 border-b border-surface-border">
@@ -740,10 +368,12 @@
               <h3 class="font-bold text-ink text-base mb-3">Backend &amp; APIs</h3>
               <ul class="space-y-2 text-xs font-mono text-ink-muted">
                 <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Laravel (PHP)</li>
-                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Go (Golang)</li>
                 <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Node.js / Express</li>
                 <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">REST &amp; Webhook Architecture</li>
                 <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Python (FastAPI)</li>
+
+                              <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Ai utilization to enhace workflow</li>
+
               </ul>
             </div>
           </div>
@@ -756,9 +386,10 @@
               <ul class="space-y-2 text-xs font-mono text-ink-muted">
                 <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Vue 3 / Composition API</li>
                 <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">React / TypeScript</li>
+                                                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">nextjs</li>
                 <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Tailwind CSS</li>
-                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">HTML5 &amp; Semantic Accessibility</li>
                 <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Responsive Web Design</li>
+                                                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">flutter(currently building skillset in flutter for cross paltform mobile application development)</li>
               </ul>
             </div>
           </div>
@@ -778,130 +409,11 @@
             </div>
           </div>
 
-          <!-- Category 4: DevOps & Practices -->
-          <div class="p-6 rounded-xl bg-white border border-surface-border flex flex-col justify-between">
-            <div>
-              <div class="w-8 h-8 rounded-lg bg-brand-light text-brand flex items-center justify-center font-bold text-sm mb-4">04</div>
-              <h3 class="font-bold text-ink text-base mb-3">DevOps &amp; Tools</h3>
-              <ul class="space-y-2 text-xs font-mono text-ink-muted">
-                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Docker &amp; Containers</li>
-                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">BullMQ / Queue Workers</li>
-                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Git / GitHub Actions CI</li>
-                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Apache Kafka</li>
-                <li class="p-2 rounded bg-surface-neutral border border-surface-border text-ink">Linux Administration</li>
-              </ul>
-            </div>
-          </div>
-
         </div>
 
       </div>
     </section>
-
-    <!-- ENGINEERING EXPERIENCE & BACKGROUND -->
-    <section id="experience" class="py-16 md:py-24 border-b border-surface-border">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="max-w-2xl mb-12">
-          <p class="text-xs font-bold uppercase tracking-wider text-brand mb-2">Career &amp; Work</p>
-          <h2 class="text-2xl sm:text-4xl font-bold text-ink tracking-tight mb-4">Engineering Experience</h2>
-          <p class="text-ink-muted text-sm sm:text-base">Professional roles, key technical contributions, and system milestones.</p>
-        </div>
-
-        <!-- Experience Timeline -->
-        <div class="space-y-8 relative before:absolute before:inset-0 before:left-3 sm:before:left-4 before:w-0.5 before:bg-surface-border">
-          
-          <!-- Experience Item 1 -->
-          <div class="relative pl-8 sm:pl-10">
-            <span class="absolute left-0 top-1.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white border-2 border-brand flex items-center justify-center">
-              <span class="w-2 h-2 rounded-full bg-brand"></span>
-            </span>
-
-            <div class="bg-surface-neutral p-6 rounded-2xl border border-surface-border">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                <h3 class="text-lg font-bold text-ink">Senior Software Engineer — Fintech Solutions</h3>
-                <span class="text-xs font-mono text-brand font-semibold px-2.5 py-1 rounded bg-brand-light border border-brand-border w-fit">2023 — Present</span>
-              </div>
-              <p class="text-xs text-ink-subtle font-mono mb-4">Payment Infrastructure &amp; Core Systems</p>
-              
-              <ul class="space-y-2 text-xs sm:text-sm text-ink-muted">
-                <li class="flex items-start gap-2">
-                  <span class="text-brand font-bold">›</span>
-                  <span>Architected and maintained wallet engine components processing over 100,000 monthly transaction events with zero debit discrepancies.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-brand font-bold">›</span>
-                  <span>Implemented atomic Redis distributed locking mechanisms to enforce complete API idempotency during payment processing spikes.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-brand font-bold">›</span>
-                  <span>Led migration from monolith webhooks to an isolated BullMQ event worker pool, cutting retry latencies by 65%.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Experience Item 2 -->
-          <div class="relative pl-8 sm:pl-10">
-            <span class="absolute left-0 top-1.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white border-2 border-surface-border flex items-center justify-center">
-              <span class="w-2 h-2 rounded-full bg-ink-subtle"></span>
-            </span>
-
-            <div class="bg-surface-neutral p-6 rounded-2xl border border-surface-border">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                <h3 class="text-lg font-bold text-ink">Backend &amp; API Engineer — Financial Applications</h3>
-                <span class="text-xs font-mono text-ink-muted px-2.5 py-1 rounded bg-white border border-surface-border w-fit">2021 — 2023</span>
-              </div>
-              <p class="text-xs text-ink-subtle font-mono mb-4">API Gateways &amp; Ledger Integration</p>
-              
-              <ul class="space-y-2 text-xs sm:text-sm text-ink-muted">
-                <li class="flex items-start gap-2">
-                  <span class="text-brand font-bold">›</span>
-                  <span>Built RESTful APIs in Laravel and PostgreSQL for automated utility bill payments and identity verification workflows.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-brand font-bold">›</span>
-                  <span>Designed relational schemas adhering strictly to double-entry accounting rules, ensuring verifiable ledger balances.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-brand font-bold">›</span>
-                  <span>Integrated multi-provider payment gateways with fallback routing for high API availability.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Experience Item 3 -->
-          <div class="relative pl-8 sm:pl-10">
-            <span class="absolute left-0 top-1.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white border-2 border-surface-border flex items-center justify-center">
-              <span class="w-2 h-2 rounded-full bg-ink-subtle"></span>
-            </span>
-
-            <div class="bg-surface-neutral p-6 rounded-2xl border border-surface-border">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
-                <h3 class="text-lg font-bold text-ink">Full-Stack Software Developer — Independent &amp; Contract</h3>
-                <span class="text-xs font-mono text-ink-muted px-2.5 py-1 rounded bg-white border border-surface-border w-fit">2019 — 2021</span>
-              </div>
-              <p class="text-xs text-ink-subtle font-mono mb-4">Web Applications &amp; Client Projects</p>
-              
-              <ul class="space-y-2 text-xs sm:text-sm text-ink-muted">
-                <li class="flex items-start gap-2">
-                  <span class="text-brand font-bold">›</span>
-                  <span>Developed full-stack web applications using Vue.js, Node.js, and MySQL for fintech and e-commerce clients.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-brand font-bold">›</span>
-                  <span>Created mobile-first, responsive user interfaces with focus on fast page render speed and accessible markup.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
+    
     <!-- CONTACT SECTION & FOOTER -->
     <section id="contact" class="py-16 md:py-24 bg-surface-neutral">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -936,10 +448,6 @@
             <div class="flex items-center gap-6 pt-6 border-t border-surface-border text-xs sm:text-sm font-medium text-ink-muted">
               <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener noreferrer" class="hover:text-brand transition-colors flex items-center gap-1.5">
                 <span>GitHub</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-              </a>
-              <a href="https://linkedin.com/in/YOUR-USERNAME" target="_blank" rel="noopener noreferrer" class="hover:text-brand transition-colors flex items-center gap-1.5">
-                <span>LinkedIn</span>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </a>
             </div>
@@ -1087,52 +595,7 @@
           </ul>
         `
       },
-      ledgersync: {
-        title: "LedgerSync — Distributed Reconciliation",
-        category: "Backend Systems",
-        body: `
-          <p><strong>System Highlights:</strong> High-speed automated batch process that compares external bank clearing files against internal PostgreSQL ledger logs.</p>
-          <ul class="list-disc pl-5 space-y-1 text-xs">
-            <li>Golang worker pool handling parallel stream processing via Kafka.</li>
-            <li>Automatic flag generation for variance thresholds exceeding $0.01.</li>
-          </ul>
-        `
-      },
-      paypulse: {
-        title: "PayPulse — Realtime Merchant Monitor",
-        category: "Analytics Application",
-        body: `
-          <p><strong>System Highlights:</strong> Dashboard delivering live websocket transaction telemetry for merchants watching dispute spikes and approval rates.</p>
-          <ul class="list-disc pl-5 space-y-1 text-xs">
-            <li>React & TypeScript frontend with lightweight chart renders.</li>
-            <li>Sub-50ms latency websocket updates during high-traffic sales.</li>
-          </ul>
-        `
-      },
-      vaultauth: {
-        title: "VaultAuth — Security & Token Engine",
-        category: "Security Infrastructure",
-        body: `
-          <p><strong>System Highlights:</strong> Lightweight security gateway acting as an identity verification intermediary for microservice routing.</p>
-          <ul class="list-disc pl-5 space-y-1 text-xs">
-            <li>FastAPI execution layer with JWT and OAuth2 integration.</li>
-            <li>Redis sliding-window rate limiter per client IP and token scope.</li>
-          </ul>
-        `
-      },
-      sentinel: {
-        title: "Sentinel — Webhook Resilience Queue",
-        category: "Event Processing",
-        body: `
-          <p><strong>System Highlights:</strong> Reliable outbound payment event dispatcher designed to guarantee webhook delivery even during receiver downtime.</p>
-          <ul class="list-disc pl-5 space-y-1 text-xs">
-            <li>BullMQ queue management with customizable exponential backoff policies.</li>
-            <li>Dead-letter queue isolation for corrupted endpoints.</li>
-          </ul>
-        `
-      }
-    };
-
+      
     function openProjectModal(key) {
       const modal = document.getElementById('projectModal');
       const header = document.getElementById('modalHeader');
